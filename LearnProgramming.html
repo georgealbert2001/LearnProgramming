@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn programming with fun and interactive lessons! Our platform provides tutorials in Python, JavaScript, HTML, CSS, and more for all skill levels.">
+    
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="programming tutorials, learn programming, Python, JavaScript, HTML, CSS, coding for beginners, programming lessons,cybersecurity,Artificial,IT,ITsupport">
+    
+    <title>Programming and IT Support</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make sure the body takes up the full viewport height */
+        }
+
+        /* Left Menu (Taxonomy Tree) */
+        .left-menu {
+            width: 250px;
+            
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .left-menu h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        .left-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        .left-menu ul li {
+            margin: 10px 0;
+        }
+        .left-menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .left-menu ul li a:hover {
+            background-color: #ffcc00;
+            color: #003366;
+        }
+
+        /* Main content */
+        .main-content {
+            margin-left: 300px;
+            padding: 20px;
+            width: calc(95% - 270px);
+            flex-grow: 1; /* Allow this section to grow and take available space */
+        }
+
+        header {
+            background-color: #004d99;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px 15px 5px 5px
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.3rem;
+            margin: 10px 0 0;
+        }
+
+        nav {
+            display: flex;
+            text-align: center;
+            justify-items: center;
+            place-items: center;
+            padding: 10px 10px 10px 10px;
+            background-color: #003366;
+            border-radius: 15px 15px 5px 5px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            justify-content: center;
+            text-align: center;
+            margin: 0 15px;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ffcc00;
+            color: #003366;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #004d99;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        section h3 {
+            color: #0073e6;
+            margin-top: 30px;
+        }
+
+        .video-category {
+            margin-bottom: 30px;
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .video-gallery a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .video-gallery a:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .video-gallery img {
+            width: 100%;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* Ad Space Styling */
+        .ad-space {
+            width: 100%;
+            margin: 0;
+            height: 250px; /* Typical size for a banner ad */
+            background-color: #ddd; /* Placeholder color */
+            text-align:center;
+            justify-content: center;
+            text-indent: center;
+            line-height: 250px;
+            font-size: 1.5rem;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Donate Button */
+        .donate-btn {
+            background-color: #ff6600;
+            color: white;
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .donate-btn:hover {
+            background-color: #cc5200;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+        
+            padding: 10px;
+            padding-left: 140px;
+            position: center;
+            width: 100%; /* Ensure footer stretches across the entire page */
+            bottom: 0; /* Keep it at the bottom */
+            margin-top: auto; /* Automatically push the footer down */
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .digit {
+            width: 30px;
+            height: 45px;
+            background-color: black;
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 45px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            display: inline-block;
+        }
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Left Menu -->
+    <div class="left-menu">
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#AI">Artifitial Intelligence</a></li>
+            <li><a href="#programming">Programming</a></li>
+            <li><a href="#it-support">IT Support</a></li>
+            <li><a href="#cybersecurity">Cybersecurity</a></li>
+            <li><a href="#Algorithm">DS and Algorithm</a></li>
+            <li><a href="#cryptocurrency">Cryptocurrency</a></li>
+            <li><a href="#make-money">How to Make Money</a></li>
+            <li><a href=".//blogger.html">Blogger</a></li>
+            <li><a href=".//forum.html">Forum</a></li>
+            <li><a href="#fun-tech">Fun Tech Vids</a></li>
+            <li><a href="#contact">Contact US</a></li>
+            <li><a href="#donate">Donate</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Programming and IT Support</h1>
+            <p>Your go-to platform for learning programming and IT skills</p>
+        </header>
+        <nav>
+            <a href="#AI">Artifitial Intelligence</a>
+            <a href="#programming">Programming</a>
+            <a href="#it-support">IT Support</a>
+            <a href="#cybersecurity">Cybersecurity</a>
+            <a href="#it-support">Crypcurrency</a>
+            <a href="#make-money">How To make Money</a>
+            <a href="blogger.html">Blogger</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+        
+
+        <!-- Ad Space 1 -->
+        <div class="ad-space">
+            <p>Advertisement Placeholder (Google AdSense)</p>
+        </div>
+        <section id="AI">
+            <h2>Artifitial Intelligence</h2>
+            <p>Explore  videos for (AI) ,AI  refers to the creation of machines capable of simulating human intelligence to perform tasks like decision-making, learning, and problem-solving...</p>
+            <div class="video-category">
+                <h3>AI</h3>
+                <div class="video-gallery">
+                    <a href="https://www.youtube.com/watch?v=XVO3zsHdvio&t=121s&pp=ygUCQUk%3D" target="_blank">
+                        <img src="https://img.youtube.com/vi/XVO3zsHdvio/0.jpg" width="150" height="200" alt="HTML Full Course">
+                        <p>Build Everything with AI Agents: Here's How
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=JMUxmLyrhSk&pp=ygUgYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UgdHV0b3JpYWw%3D" target="_blank">
+                        <img src="https://img.youtube.com/vi/JMUxmLyrhSk/hqdefault.jpg" width="150" height="200"
+                         alt="JavaScript Full Course">
+                        <p>Artificial Intelligence Full Course | Artificial Intelligence Tutorial for Beginners | Edureka
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=5NgNicANyqM" target="_blank">
+                        <img src="https://img.youtube.com/vi/5NgNicANyqM/maxresdefault.jpg"  width="150" height="200" alt="React JS Full Course">
+                        <p>Harvard CS50’s Artificial Intelligence with Python Full University Course</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=h1kGMntKbsU" target="_blank">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.EjFjzvUymlCWlpsvx9W_MQHaEK&pid=Api" width="150" height="200" alt="CSS Grid and Flexbox">
+                        <p>Top 5 AI Courses for Beginners</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=UwsrzCVZAb8" target="_blank">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.Zz9Qyp2FXlsgWuvVSW0rTQHaK_&pid=Api" width="150" height="200" alt="Vue.js Full Course">
+                        <p>The Age of A.I.</p>
+                    </a>
+                    <a href="https://www.youtube.com/c/ArtificialIntelligenceAllinOne" target="_blank">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.ZDTgqLEu0p8WdJe2k4y6_QHaHa&pid=Api.img" width="150" height="200" alt="Node.js Full Course">
+                        <p>Artificial Intelligence - All in One</p>
+                    </a>
+                    <a href="https://www.youtube.com/c/DeepLearningAI" target="_blank">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.teG64wBd0M8pyDFt3u_4wAHaEj&pid=Api.img" width="150" height="200" alt="MongoDB Full Course">
+                        <p>DeepLearning.AI</p>
+                    </a>
+                    <a href="https://www.youtube.com/user/keeroyz" target="_blank">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.QiBJTzRG6msuA0CrFneSLgHaHa&pid=Api.img" width="150" height="200" alt="React Native Full Course">
+                        <p>Two Minute Papers</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank">
+                        <img src="https://img.youtube.com/vi/aircAruvnKk/0.jpg
+                        " width="150" height="200"  alt="Vue.js Full Course">
+                        <p>Understanding Neural Networks</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=FkqINm-l3q0" target="_blank">
+                        <img src="https://img.youtube.com/vi/FkqINm-l3q0/0.jpg
+                        " width="150" height="200" alt="">
+                        <p>**Artificial Intelligence Full Course 2025</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=UwsrzCVZAb8" target="_blank">
+                        <img src="https://img.youtube.com/vi/UwsrzCVZAb8/0.jpg" width="150" height="200" alt="">
+                        <p>The Age of A.I. Episode 1: How AI is Transforming the World</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=7eh4d6sabA0" target="_blank">
+                        <img src="https://img.youtube.com/vi/7eh4d6sabA0/0.jpg" width="150" height="200" alt="">
+                        <p>Machine Learning with Python</p>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+         
+
+        <section id="programming">
+            <h2>Programming</h2>
+            <p>Explore programming tutorials, categorized by development type and language.</p>
+            <div class="video-category">
+                <h3>Web Development</h3>
+                <div class="video-gallery">
+                    <a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank">
+                        <img src="https://img.youtube.com/vi/UB1O30fR-EE/0.jpg"  width="150" height="200" alt="HTML Full Course">
+                        <p>HTML Full Course (freeCodeCamp)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" target="_blank">
+                        <img src="https://img.youtube.com/vi/PkZNo7MFNFg/0.jpg" width="150" height="200" alt="JavaScript Full Course">
+                        <p>JavaScript Full Course (freeCodeCamp)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=7kVeCqQCxlk" target="_blank">
+                        <img src="https://img.youtube.com/vi/7kVeCqQCxlk/0.jpg"  width="150" height="200" alt="React JS Full Course">
+                        <p>React JS Full Course (Mosh)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=p0bGHP-PXD4" target="_blank">
+                        <img src="https://img.youtube.com/vi/p0bGHP-PXD4/maxresdefault.jpg" width="150" height="200" alt="CSS Grid and Flexbox">
+                        <p>Build a Responsive Website | HTML, CSS Grid, Flexbox & More</p>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=4deVCNJq3qc&pp=ygUhVnVlLmpzIEZ1bGwgQ291cnNlIChmcmVlQ29kZUNhbXAp" target="_blank">
+                        <img src="https://img.youtube.com/vi/4deVCNJq3qc/maxresdefault.jpg" width="150" height="200" alt="Vue.js Full Course">
+                        <p>Learn Vue.js - Full Course for Beginners - 2019
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=f2EqECiTBL8" target="_blank">
+                        <img src="https://img.youtube.com/vi/f2EqECiTBL8/maxresdefault.jpg" width="150" height="200" alt="Node.js Full Course">
+                        <p>Node.js Full Course</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=VELru-FCWDM" target="_blank">
+                        <img src="https://img.youtube.com/vi/VELru-FCWDM/maxresdefault.jpg" width="150" height="200" alt="MongoDB Complete Introduction & Summary
+                        ">
+                        <p>MongoDB Complete Introduction & Summary
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=qSRrxpdMpVc" target="_blank">
+                        <img src="https://img.youtube.com/vi/qSRrxpdMpVc/maxresdefault.jpg" " alt="React Native Tutorial for Beginners - Crash Course 2020
+                        " width="150" height="200">
+                        <p>React Native Tutorial for Beginners - Crash Course 2020
+                            )</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=GxmfcnU3feo" target="_blank">
+                        <img src="https://img.youtube.com/vi/GxmfcnU3feo/maxresdefault.jpg " width="150" height="200" alt="The Complete Web Development Roadmap
+                        ">
+                        <p>The Complete Web Development Roadmap
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=Nn7EX3zkGUo&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu" target="_blank">
+                        <img src="https://img.youtube.com/vi/Nn7EX3zkGUo/maxresdefault.jpg
+                        "  width="150" height="200"alt="CS50W - Introduction
+                        ">
+                        <p>CS50W - Introduction
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=vzGllw18DkA" target="_blank">
+                        <img src="https://img.youtube.com/vi/vzGllw18DkA/maxresdefault.jpg 
+                        "  width="150" height="200" alt="Harvard CS50’s Web Programming with Python and JavaScript – Full University Course
+                        ">
+                        <p>Harvard CS50’s Web Programming with Python and JavaScript – Full University Course
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=71lKjHMJSFg" target="_blank">
+                        <img src="https://img.youtube.com/vi/71lKjHMJSFg/maxresdefault.jpg
+                        " width="150" height="200"  alt="2025 Web Development Roadmap | Become a Full stack Web Developer in 1 Year
+                        ">
+                        <p>2025 Web Development Roadmap | Become a Full stack Web Developer in 1 Year
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- IT Support -->
+        <section id="it-support">
+            <h2>IT Support</h2>
+            <p>Learn the essential skills for IT support roles.</p>
+            <div class="video-category">
+                <h3>Essential IT Skills</h3>
+                <div class="video-gallery">
+                    <a href="https://www.youtube.com/watch?v=BNbPsiCGQzw" target="_blank">
+                        <img src="https://img.youtube.com/vi/BNbPsiCGQzw/maxresdefault.jpg
+                        " width="150" height="200" alt="IBM IT Support - Complete Course | IT Support Technician - Full Course
+                        ">
+                        <p>IBM IT Support - Complete Course | IT Support Technician - Full Course
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=lJC_sJ6jhDo&list=PLTZYG7bZ1u6pQJShZs9iV0aJNzsqTm4Mx" target="_blank">
+                        <img src="https://img.youtube.com/vi/lJC_sJ6jhDo/maxresdefault.jpg
+                        "  width="150" height="200" alt="Welcome to IT Support | Google IT Support Certificate">
+                        <p>Welcome to IT Support | Google IT Support Certificate
+                        </p>
+                    </a><a href="https://www.youtube.com/watch?v=4bYduTucOQM&list=PLxo6mf-dQ33hxxhyQ2VctHlxAHnkhxcKL" target="_blank">
+                        <img src="https://www.orientsoftware.com/Themes/Content/Images/blog/2024-08-27/it-support-and-services-thumbnail.jpg" width="150" height="200" alt="IT Support Training - Day 1 - Training Concepts, Domain Controller
+                        ">
+                        <p>IT Support Training - Day 1 - Training Concepts, Domain Controller
+                        </p>
+                    </a><a href="https://www.youtube.com/watch?v=p7tRZg_jaTw&list=PLXgpkh7qd-qsCdy2ahQqtfkwJkjEhD3eM" target="_blank">
+                        <img src="https://img.youtube.com/vi/p7tRZg_jaTw/maxresdefault.jpg
+                        "  width="150" height="200" alt="00-IT Technical Support Course | By Eng-Emad Adel Eskander | Arabic
+                        ">
+                        <p>00-IT Technical Support Course | By Eng-Emad Adel Eskander | Arabic
+                        </p>
+                    </a><a href="https://www.youtube.com/watch?v=HaZR5p8zzuQ" target="_blank">
+                        <img src="https://img.youtube.com/vi/HaZR5p8zzuQ/maxresdefault.jpg
+                        " width="150" height="200" alt="HELP DESK/IT SUPPORT TECHNICAL TEST PREPARATION
+                        ">
+                        <p>HELP DESK/IT SUPPORT TECHNICAL TEST PREPARATION
+                        </p>
+                    </a><a href="https://www.youtube.com/watch?v=DJkxHL7IHtM" target="_blank">
+                        <img src="https://www.orientsoftware.com/Themes/Content/Images/blog/2024-08-27/it-support-and-services-thumbnail.jpg
+                        " width="150" height="200" alt="IT: Helpdesk Troubleshoot Real Life Tickets part 1-5
+                        ">
+                        <p>IT: Helpdesk Troubleshoot Real Life Tickets part 1-5
+                        </p>
+                    </a><a href="https://www.youtube.com/watch?v=V4u1LHDDn8M&list=PLRFfUiHtDx8aGGPRePUuTs0ZVvD60Uvto" target="_blank">
+                        <img src="https://img.youtube.com/vi/V4u1LHDDn8M/maxresdefault.jpg
+                        "  width="150" height="200" alt="Google IT Support Professional Certificate Course | Binary Assignment Live Solution
+                        ">
+                        <p>Google IT Support Professional Certificate Course | Binary Assignment Live Solution
+                        </p>
+                    </a><a href="https://www.youtube.com/watch?v=zrCNGzwLjcU" target="_blank">
+                        <img src="https://img.youtube.com/vi/zrCNGzwLjcU/maxresdefault.jpg
+                        " width="150" height="200" alt="Active Directory Training For Entry Level Help Desk
+                        ">
+                        <p>Active Directory Training For Entry Level Help Desk
+                        </p>
+                    </a><a href="https://www.youtube.com/watch?v=gMU5bngGQ1E" target="_blank">
+                        <img src="https://img.youtube.com/vi/gMU5bngGQ1E/maxresdefault.jpg
+                        " width="150" height="200" alt="HELPDESK - how to get started in IT (your first job)
+                        ">
+                        <p>HELPDESK - how to get started in IT (your first job)
+                        </p>
+                    </a><a href="https://www.youtube.com/watch?v=WbG8O4Oo0A0&list=PLmbkTCZhP_q8wBsoI2wRCWKg9ULxQA4Ou" target="_blank">
+                        <img src="https://img.youtube.com/vi/WbG8O4Oo0A0/maxresdefault.jpg
+                        " width="150" height="200" alt="Top 20 Network Commands must know everyone || Basic network troubleshooting commands in Hindi| icnt
+                        ">
+                        <p>Top 20 Network Commands must know everyone || Basic network troubleshooting commands in Hindi| icnt</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=Gg-DipPPU_Q" target="_blank">
+                        <img src="https://img.youtube.com/vi/Gg-DipPPU_Q/maxresdefault.jpg"  width="150" height="200" alt="CCST IT Support Basics">
+                        <p>CCST IT Support Basics</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=e3iinFPZE7o" target="_blank">  
+                        <img src="https://img.youtube.com/vi/e3iinFPZE7o/maxresdefault.jpg
+                        " width="150" height="200" alt="What is IT Service Desk | Service Desk | IT Service Desk | IT HelpDesk
+                        ">
+                        <p>What is IT Service Desk | Service Desk | IT Service Desk | IT HelpDesk
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cybersecurity -->
+        <section id="cybersecurity">
+            <h2>Cybersecurity</h2>
+            <p>Understand the world of cybersecurity and how to protect yourself and others online.</p>
+            <div class="video-category">
+                <h3>Introduction to Cybersecurity</h3>
+                <div class="video-gallery">
+                    <a href="https://www.youtube.com/watch?v=5xWnmUEi1Qw" target="_blank">
+                        <img src="https://i.ytimg.com/vi/5xWnmUEi1Qw/hqdefault.jpg" width="150" height="200" alt="the hacker’s roadmap (how to get started in IT in 2025)">
+                        <p>the hacker’s roadmap (how to get started in IT in 2025)
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=s19BxFpoSd0" target="_blank">
+                        <img src="https://i.ytimg.com/vi/s19BxFpoSd0/hqdefault.jpg " width="150" height="200" alt="Cybersecurity Mastery: Complete Course in a Single Video">
+                        <p>Cybersecurity Mastery: Complete Course in a Single Video</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=XF0mk2tDsPI" target="_blank">
+                        <img src="https://i.ytimg.com/vi/XF0mk2tDsPI/hqdefault.jpg" width="150" height="200" alt="How to become a cybersecurity analyst in 6 months: full roadmap 2025
+                        ">
+                        <p>How to become a cybersecurity analyst in 6 months: full roadmap 2025
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=oYVYBPTe2zQ&pp=ygUOY3liZXIgc2VjdXJpdHk%3D" target="_blank">
+                        <img src="https://i.ytimg.com/vi/oYVYBPTe2zQ/hqdefault.jpg" width="150" height="200"alt="Cyber Security Full Course 2024 | Cyber Security Course | Cyber Security Training | Intellipaat">
+                        <p>Cyber Security Full Course 2024 | Cyber Security Course | Cyber Security Training | Intellipaat
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=izmCJlJEvQw&pp=ygUOY3liZXIgc2VjdXJpdHk%3D" target="_blank">
+                        <img src="https://i.ytimg.com/vi/izmCJlJEvQw/hqdefault.jpg
+
+                        " width="150" height="200"  alt="Build Your Own Cybersecurity Lab at Home (For FREE)
+                        ">
+                        <p>Build Your Own Cybersecurity Lab at Home (For FREE)
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=Ieegg45Pojw&pp=ygUOY3liZXIgc2VjdXJpdHk%3D
+                    " target="_blank">
+                        <img src="https://i.ytimg.com/vi/Ieegg45Pojw/hqdefault.jpg" width="150" height="200" alt="Cybersecurity For Beginners | Basics of Cyber security For Beginners Complete Course, Google
+                        ">
+                        <p>Cybersecurity For Beginners | Basics of Cyber security For Beginners Complete Course, Google
+                        </p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=Kx4y9c7w2JQ&pp=ygUOY3liZXIgc2VjdXJpdHk%3D" target="_blank">
+                        <img src="https://i.ytimg.com/vi/Kx4y9c7w2JQ/hqdefault.jpg
+
+                        " width="150" height="200" alt="">
+                        <p></p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=fNzpcB7ODxQ" target="_blank">
+                        <img src="https://i.ytimg.com/vi/fNzpcB7ODxQ/hqdefault.jpg
+
+                        " width="150" height="200" alt="Ethical Hacking in 12 Hours - Full Course - Learn to Hack!
+                        ">
+                        <p>Ethical Hacking in 12 Hours - Full Course - Learn to Hack!
+
+                        </p>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+        <section id="Algorithm">
+            <h2>Data Structure and Algorithm</h2>
+            <p> understand the  Data Structure and  Algorithm.</p>
+            <div class="video-category">
+                <h3>Understand the  Data Structure and  Algorithm.</h3>
+                <div class="video-gallery">
+                    <a href="https://www.youtube.com/watch?v=4OGMB4Fhh50&list=PLBlnK6fEyqRhX6r2uhhlubuF5QextdCSM" target="_blank">
+                        <img src="https://img.youtube.com/vi/4OGMB4Fhh50/0.jpg" width="150" height="200" alt="Introduction to Programming and Data Structures">
+                        <p>Introduction to Programming and Data Structures</p>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=SFEROgwxicA" target="_blank">
+                        <img src="https://img.youtube.com/vi/SFEROgwxicA/0.jpg" width="150" height="200" alt="Data Structures Explained for Beginners - How I Wish I was Taught
+                        ">
+                        <p>Data Structures Explained for Beginners - How I Wish I was Taught
+                        </p>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=BBpAmxU_NQo&pp=ygUdZGF0YSBzdHJ1Y3R1cmVzIGFuZCBhbGdvcml0aG0%3D" target="_blank">
+                        <img src="https://img.youtube.com/vi/BBpAmxU_NQo/0.jpg" width="150" height="200" alt="Data Structures and Algorithms: Crash Course">
+                        <p>Data Structures and Algorithms: Crash Course</p>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=bum_19loj9A&list=PLBZBJbE_rGRV8D7XZ08LK6z-4zPoWzu5H" target="_blank">
+                        <img src="https://img.youtube.com/vi/bum_19loj9A/0.jpg" width="150" height="200" alt="Data Structures and Algorithms Playlist">
+                        <p>Data Structures and Algorithms Playlist</p>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=_t2GVaQasRY&list=PLeo1K3hjS3uu_n_a__MI_KktGTLYopZ12" target="_blank">
+                        <img src="https://img.youtube.com/vi/_t2GVaQasRY/0.jpg" width="150" height="200" alt="Data Structures and Algorithms Playlist 2">
+                        <p>Data Structures and Algorithms Playlist 2</p>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=pkYVOmU3MgA" target="_blank">
+                        <img src="https://img.youtube.com/vi/pkYVOmU3MgA/0.jpg" width="150" height="200" alt="Data Structures and Algorithms in Python">
+                        <p>Data Structures and Algorithms in Python</p>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=8hly31xKli0" target="_blank">
+                        <img src="https://img.youtube.com/vi/8hly31xKli0/0.jpg" width="150" height="200" alt="Algorithms and Data Structures Tutorial - Full Course for Beginners">
+                        <p>Algorithms and Data Structures Tutorial - Full Course for Beginners</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=uL7wOK5uAG0" target="_blank">
+                        <img src="https://img.youtube.com/vi/uL7wOK5uAG0/0.jpg" width="150" height="200" alt="126. Does Knowing Data Structures and Algorithms Benefit a C# Developer?">
+                        <p>126. Does Knowing Data Structures and Algorithms Benefit a C# Developer?</p>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Cryptocurrency -->
+        <section id="cryptocurrency">
+            <h2>Cryptocurrency</h2>
+            <p>Learn about the basics of cryptocurrency and blockchain technology.</p>
+            <div class="video-category">
+                <h3>Understanding Cryptocurrency</h3>
+                <div class="video-gallery">
+                    <a href="https://www.youtube.com/watch?v=TDGz9v4k3l4" target="_blank">
+                        <img src="https://img.youtube.com/vi/TDGz9v4k3l4/0.jpg" alt="Introduction to Cryptocurrency">
+                        <p>Introduction to Cryptocurrency (CryptoMastery)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=8dRgVw1_lkk" target="_blank">
+                        <img src="https://img.youtube.com/vi/8dRgVw1_lkk/0.jpg" alt="Bitcoin Explained">
+                        <p>Bitcoin Explained (Bankless)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=hjwXNrJ5jlQ" target="_blank">
+                        <img src="https://img.youtube.com/vi/hjwXNrJ5jlQ/0.jpg" alt="Ethereum Basics">
+                        <p>Ethereum Basics (Whiteboard Crypto)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=9Pr4keOB9tM" target="_blank">
+                        <img src="https://img.youtube.com/vi/9Pr4keOB9tM/0.jpg" alt="How to Buy Cryptocurrency">
+                        <p>How to Buy Cryptocurrency (Coin Bureau)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=bg7QMIyzvwA" target="_blank">
+                        <img src="https://img.youtube.com/vi/bg7QMIyzvwA/0.jpg" alt="Crypto Wallets Explained">
+                        <p>Crypto Wallets Explained (BitBoy Crypto)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=lh9CjqOLG8w" target="_blank">
+                        <img src="https://img.youtube.com/vi/lh9CjqOLG8w/0.jpg" alt="Blockchain Overview">
+                        <p>Blockchain Overview (Simply Explained)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=8vUjT1nMeE8" target="_blank">
+                        <img src="https://img.youtube.com/vi/8vUjT1nMeE8/0.jpg" alt="Crypto Mining Guide">
+                        <p>Crypto Mining Guide (CryptoMiner)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=dO9ldqUSoQw" target="_blank">
+                        <img src="https://img.youtube.com/vi/dO9ldqUSoQw/0.jpg" alt="Understanding DeFi">
+                        <p>Understanding DeFi (The Defiant)</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Make Money Using Programming -->
+        <section id="make-money">
+            <h2>How to Make Money </h2>
+            <p>Explore ways to leverage programming skills to generate income.</p>
+            <div class="video-category">
+                <h3>Monetizing Programming Skills</h3>
+                <div class="video-gallery">
+                    <a href="https://www.youtube.com/watch?v=GBjKMxM59NQ" target="_blank">
+                        <img src="https://img.youtube.com/vi/GBjKMxM59NQ/0.jpg" alt="Freelancing in Programming">
+                        <p>Freelancing in Programming (Tech with Tim)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=-n8BcC0kd58" target="_blank">
+                        <img src="https://img.youtube.com/vi/-n8BcC0kd58/0.jpg" alt="Building Your Portfolio">
+                        <p>Building Your Portfolio (Fireship)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=qjc3Y5LAl9E" target="_blank">
+                        <img src="https://img.youtube.com/vi/qjc3Y5LAl9E/0.jpg" alt="Start Coding for Money">
+                        <p>Start Coding for Money (The Net Ninja)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=ELU9G_UmWo4" target="_blank">
+                        <img src="https://img.youtube.com/vi/ELU9G_UmWo4/0.jpg" alt="Make Money Online">
+                        <p>Make Money Online (Programming with Mosh)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=r1YrdOSyO64" target="_blank">
+                        <img src="https://img.youtube.com/vi/r1YrdOSyO64/0.jpg" alt="Sell Your Software">
+                        <p>Sell Your Software (CodewithHarry)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=2sDfz0Jb-JY" target="_blank">
+                        <img src="https://img.youtube.com/vi/2sDfz0Jb-JY/0.jpg" alt="Automating Business">
+                        <p>Automating Business (Traversy Media)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=_8Btq0CByA4" target="_blank">
+                        <img src="https://img.youtube.com/vi/_8Btq0CByA4/0.jpg" alt="Tech Startup Secrets">
+                        <p>Tech Startup Secrets (Hustle Culture)</p>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=7_1VrjT2l8E" target="_blank">
+                        <img src="https://img.youtube.com/vi/7_1VrjT2l8E/0.jpg" alt="Programming for Profit">
+                        <p>Programming for Profit (TechDevGuide)</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="ad-space">
+            <p>Advertisement Placeholder (Google AdSense)</p>
+        </div>
+            
+        
+
+
+        <!-- Donate Button -->
+        <div class="donate">
+            <button class="donate-btn">Donate to Support Us</button>
+            
+        </div>
+        <br>
+        <h3 class="counter-container">Visitors</h3>
+        <div class="counter-container" id="counterBox">visitor counter</div>
+
+                                   
+            
+    </div>
+    
+    <script>
+        // Get visit count from localStorage
+        let visitCount = localStorage.getItem('pageVisitCount');
+
+        // If no count exists, set it to 1; otherwise, increment it
+        if (visitCount === null) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        // Save updated count back to localStorage
+        localStorage.setItem('pageVisitCount', visitCount);
+
+        // Pad the visit count to 6 digits with leading zeros
+        const paddedCount = visitCount.toString().padStart(6, '0');
+
+        // Display each digit separately
+        const counterBox = document.getElementById('counterBox');
+        counterBox.innerHTML = ""; // Clear previous digits
+        for (let digit of paddedCount) {
+            let digitBox = document.createElement("div");
+            digitBox.classList.add("digit");
+            digitBox.innerText = digit;
+            counterBox.appendChild(digitBox);
+        }
+    </script>
+   
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Programming and IT Support. All rights reserved.</p>
+        <p><a href="#contact">Contact Us</a> | <a href="#donate">Donate</a></p>
+    </footer>
+    
+</body>
+</html>
