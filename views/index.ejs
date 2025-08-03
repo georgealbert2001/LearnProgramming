@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn programming with fun and interactive lessons! Our platform provides tutorials in Python, JavaScript, HTML, CSS, and more for all skill levels.">
+    <meta name="keywords" content="programming tutorials, learn programming, Python, JavaScript, HTML, CSS, coding for beginners, programming lessons,cybersecurity,Artificial,IT,ITsupport">
+    <title>Programming and IT Support</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Left Menu (Taxonomy Tree) */
+        .left-menu {
+            width: 250px;
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .left-menu h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        .left-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        .left-menu ul li {
+            margin: 10px 0;
+        }
+        .left-menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .left-menu ul li a:hover {
+            background-color: #ffcc00;
+            color: #003366;
+        }
+
+        /* Main content */
+        .main-content {
+            margin-left: 300px;
+            padding: 20px;
+            width: calc(95% - 270px);
+            flex-grow: 1;
+        }
+
+        header {
+            background-color: #004d99;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px 15px 5px 5px
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.3rem;
+            margin: 10px 0 0;
+        }
+
+        nav {
+            display: flex;
+            text-align: center;
+            justify-items: center;
+            place-items: center;
+            padding: 10px 10px 10px 10px;
+            background-color: #003366;
+            border-radius: 15px 15px 5px 5px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            justify-content: center;
+            text-align: center;
+            margin: 0 15px;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ffcc00;
+            color: #003366;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #004d99;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        section h3 {
+            color: #0073e6;
+            margin-top: 30px;
+        }
+
+        .video-category {
+            margin-bottom: 30px;
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .video-gallery a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .video-gallery a:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .video-gallery img {
+            width: 100%;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .ad-space {
+            width: 100%;
+            margin: 0;
+            height: 250px;
+            background-color: #ddd;
+            text-align:center;
+            justify-content: center;
+            text-indent: center;
+            line-height: 250px;
+            font-size: 1.5rem;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .donate-btn {
+            background-color: #ff6600;
+            color: white;
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .donate-btn:hover {
+            background-color: #cc5200;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            padding-left: 140px;
+            position: center;
+            width: 100%;
+            bottom: 0;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .digit {
+            width: 30px;
+            height: 45px;
+            background-color: black;
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 45px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            display: inline-block;
+        }
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Left Menu -->
+    <div class="left-menu">
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#AI">Artificial Intelligence</a></li>
+            <li><a href="#programming">Programming</a></li>
+            <li><a href="#it-support">IT Support</a></li>
+            <li><a href="#cybersecurity">Cybersecurity</a></li>
+            <li><a href="#Algorithm">DS and Algorithm</a></li>
+            <li><a href="#cryptocurrency">Cryptocurrency</a></li>
+            <li><a href="#make-money">How to Make Money</a></li>
+            <li><a href="./blogger.html">Blogger</a></li>
+            <li><a href="./forum.html">Forum</a></li>
+            <li><a href="#fun-tech">Fun Tech Vids</a></li>
+            <li><a href="#contact">Contact US</a></li>
+            <li><a href="#donate">Donate</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Programming and IT Support</h1>
+            <p>Your go-to platform for learning programming and IT skills</p>
+        </header>
+        <nav>
+            <a href="#AI">Artificial Intelligence</a>
+            <a href="#programming">Programming</a>
+            <a href="#it-support">IT Support</a>
+            <a href="#cybersecurity">Cybersecurity</a>
+            <a href="#it-support">Cryptocurrency</a>
+            <a href="#make-money">How To make Money</a>
+            <a href="blogger.html">Blogger</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+
+        <!-- Ad Space 1 -->
+        <div class="ad-space">
+            <p>Advertisement Placeholder (Google AdSense)</p>
+        </div>
+
+        <% categories.forEach(function(category) { %>
+            <section id="<%= category.id %>">
+                <h2><%= category.name %></h2>
+                <div class="video-category">
+                    <div class="video-gallery">
+                        <% category.videos.forEach(function(video) { %>
+                            <a href="<%= video.videoUrl %>" target="_blank">
+                                <img src="<%= video.thumbnailUrl %>" width="150" height="200" alt="<%= video.title %>">
+                                <p><%= video.title %></p>
+                            </a>
+                        <% }); %>
+                    </div>
+                </div>
+            </section>
+        <% }); %>
+
+        <div class="ad-space">
+            <p>Advertisement Placeholder (Google AdSense)</p>
+        </div>
+
+        <!-- Donate Button -->
+        <div class="donate">
+            <button class="donate-btn">Donate to Support Us</button>
+        </div>
+        <br>
+        <h3 class="counter-container">Visitors</h3>
+        <div class="counter-container" id="counterBox">visitor counter</div>
+    </div>
+
+    <script>
+        // Initialize visitor count from server
+        let visitCount = <%= visitorCount %>;
+
+        // Update visitor count on server
+        fetch('/updateVisitorCount', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            visitCount = data.count;
+            updateCounterDisplay();
+        });
+
+        function updateCounterDisplay() {
+            const paddedCount = visitCount.toString().padStart(6, '0');
+            const counterBox = document.getElementById('counterBox');
+            counterBox.innerHTML = "";
+            for (let digit of paddedCount) {
+                let digitBox = document.createElement("div");
+                digitBox.classList.add("digit");
+                digitBox.innerText = digit;
+                counterBox.appendChild(digitBox);
+            }
+        }
+
+        // Initial display
+        updateCounterDisplay();
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Programming and IT Support. All rights reserved.</p>
+        <p><a href="#contact">Contact Us</a> | <a href="#donate">Donate</a></p>
+    </footer>
+</body>
+</html>
