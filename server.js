@@ -110,6 +110,72 @@ const getCategories = () => {
                     category: "Introduction to Cybersecurity"
                 }
             ]
+        },
+        {
+            name: "Data Structures and Algorithms",
+            id: "Algorithm",
+            videos: [
+                {
+                    title: "Data Structures and Algorithms in Python - Full Course for Beginners",
+                    videoUrl: "https://www.youtube.com/watch?v=pkYVOmU3MgA",
+                    thumbnailUrl: "https://img.youtube.com/vi/pkYVOmU3MgA/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Algorithms and Data Structures Tutorial - Full Course for Beginners",
+                    videoUrl: "https://www.youtube.com/watch?v=8hly31xKli0",
+                    thumbnailUrl: "https://img.youtube.com/vi/8hly31xKli0/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer",
+                    videoUrl: "https://www.youtube.com/watch?v=RBSGKlAvoiM",
+                    thumbnailUrl: "https://img.youtube.com/vi/RBSGKlAvoiM/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Introduction to Algorithms - MIT OpenCourseWare",
+                    videoUrl: "https://www.youtube.com/watch?v=HtSuA80QTyo",
+                    thumbnailUrl: "https://img.youtube.com/vi/HtSuA80QTyo/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Data Structures and Algorithms Crash Course",
+                    videoUrl: "https://www.youtube.com/watch?v=BBpAmxU_NQo",
+                    thumbnailUrl: "https://img.youtube.com/vi/BBpAmxU_NQo/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Binary Trees - Data Structures and Algorithms",
+                    videoUrl: "https://www.youtube.com/watch?v=fAAZixBzIAI",
+                    thumbnailUrl: "https://img.youtube.com/vi/fAAZixBzIAI/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Graph Algorithms for Technical Interviews - Full Course",
+                    videoUrl: "https://www.youtube.com/watch?v=tWVWeAqZ0WU",
+                    thumbnailUrl: "https://img.youtube.com/vi/tWVWeAqZ0WU/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges",
+                    videoUrl: "https://www.youtube.com/watch?v=oBt53YbR9Kk",
+                    thumbnailUrl: "https://img.youtube.com/vi/oBt53YbR9Kk/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Sorting Algorithms Explained Visually",
+                    videoUrl: "https://www.youtube.com/watch?v=kPRA0W1kECg",
+                    thumbnailUrl: "https://img.youtube.com/vi/kPRA0W1kECg/0.jpg",
+                    category: "DS and Algorithm"
+                },
+                {
+                    title: "Big O Notation - Full Course",
+                    videoUrl: "https://www.youtube.com/watch?v=Mo4vesaut8g",
+                    thumbnailUrl: "https://img.youtube.com/vi/Mo4vesaut8g/0.jpg",
+                    category: "DS and Algorithm"
+                }
+            ]
         }
     ];
 };
